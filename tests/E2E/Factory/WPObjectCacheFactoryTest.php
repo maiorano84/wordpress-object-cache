@@ -38,7 +38,7 @@ class WPObjectCacheFactoryTest extends TestCase
 
     public function testCreateApcuAdapterFromConfig(): void
     {
-        $adapter = WPObjectCacheFactory::createAdapterFromConfig('memcached');
+        $adapter = WPObjectCacheFactory::createAdapterFromConfig('apcu');
         $this->assertInstanceOf(Psr6::class, $adapter);
     }
 
