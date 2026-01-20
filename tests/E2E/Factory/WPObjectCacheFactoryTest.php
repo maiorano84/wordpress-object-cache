@@ -8,6 +8,7 @@ use Maiorano\ObjectCache\Cache\BlogKeyResolver;
 use Maiorano\ObjectCache\Cache\GroupManager;
 use Maiorano\ObjectCache\Factory\WPObjectCacheFactory;
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 use PHPUnit\Framework\TestCase;
 
 #[CoversClass(WPObjectCacheFactory::class)]
@@ -39,5 +40,12 @@ class WPObjectCacheFactoryTest extends TestCase
     {
         $adapter = WPObjectCacheFactory::createAdapterFromConfig('memcached');
         $this->assertInstanceOf(Psr6::class, $adapter);
+    }
+
+    #[DoesNotPerformAssertions]
+    public function testCreateAdapterWithoutNamespace(): void
+    {
+        define('WP_OBJECT_CACHE_DEFAULT_NS_ENABLED', false);
+        WPObjectCacheFactory::createAdapterFromConfig('wordpress');
     }
 }

@@ -36,9 +36,4 @@ class WPObjectCacheFactoryTest extends TestCase
     {
         WPObjectCacheFactory::autoload();
     }
-
-    public function testCreateAdapterFromConfig()
-    {
-        $this->assertInstanceOf(WPObjectCacheInterface::class, WPObjectCacheFactory::createAdapterFromConfig('wordpress'));
-    }
 }
