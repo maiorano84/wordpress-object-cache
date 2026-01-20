@@ -232,6 +232,7 @@ final class Psr6 implements BatchOperationInterface, GroupAwareInterface
 
     public function stats(): void
     {
+        printf('<strong>Cache Adapter: %s</strong>', get_class($this->cache));
         echo '<p>';
         echo "<strong>Cache Hits:</strong> {$this->hits}<br>";
         echo "<strong>Cache Misses:</strong> {$this->misses}<br>";
