@@ -11,13 +11,6 @@
  * Text Domain:       maiorano
  */
 
-/* add_action('init', function(){
-    global $wp_object_cache;
-    if(!is_admin()) {
-        $wp_object_cache->stats();
-    }
-}); */
-
 /* register_activation_hook( __FILE__, function() {
     $sys = loadFileSystem();
     if($sys !== false ) {

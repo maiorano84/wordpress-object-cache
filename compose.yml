@@ -15,7 +15,7 @@ services:
       WP_OBJECT_CACHE_REDIS_DSN: redis://${COMPOSE_PROJECT_NAME}_redis:6379
       WP_OBJECT_CACHE_MEMCACHED_DSN: memcached://${COMPOSE_PROJECT_NAME}_memcached:11211
       XDEBUG_CONFIG: "client_host=host.docker.internal start_with_request=1"
-      XDEBUG_MODE: "develop,debug,profile"
+      XDEBUG_MODE: "develop,debug,profile,coverage"
     labels:
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.entrypoints=websecure"
       - "traefik.http.routers.${COMPOSE_PROJECT_NAME}.rule=Host(`${SERVER_NAME}`)"
